@@ -1,0 +1,10 @@
+<h1>hola desde show bookings</h1>
+
+<div class="container shadow mt-3 p-3 w-50">
+  <h3> <%= @booking.date %> </h3>
+  <p><%= @booking.status %></p>
+  <%= link_to "Editar", edit_booking_path(@booking.id), class:"btn btn-warning btn-sm" %>
+  <%= link_to "Eliminar", booking_path(@booking.id),
+  data: {turbo_method: :delete, turbo_confirm: "Estas seguro/a quie quieres borrar este booking"}, class:"btn btn-danger btn-sm" %>
+  <%= link_to "Volver", bookings_path, class:"btn btn-primary btn-sm" %>
+</div>

@@ -1,0 +1,9 @@
+<ul><% @bookings.each do |booking| %>
+<li>
+  <%= booking.id %>
+  <%= booking.date %>
+  <%= booking.status %>
+  <%= link_to " Ver detalles", booking_path(booking.id) %>
+</li>
+<% end %>
+</ul>
