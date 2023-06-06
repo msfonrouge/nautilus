@@ -1,2 +1,9 @@
-<h1>Yachts#show</h1>
-<p>Find me in app/views/yachts/show.html.erb</p>
+<div class="container shadow mt-3 p-3 w-50">
+  <h3> <%= @yacht.name %> </h3>
+  <p><%= @yacht.price %></p>
+  <p><%= @yacht.capacity %></p>
+  <%= link_to "Editar", edit_yacht_path(@yacht.id), class:"btn btn-warning btn-sm" %>
+  <%= link_to "Eliminar", yacht_path(@yacht.id),
+  data: {turbo_method: :delete, turbo_confirm: "Estas seguro/a quie quieres borrar este yacht"}, class:"btn btn-danger btn-sm" %>
+  <%= link_to "Volver", yachts_path, class:"btn btn-primary btn-sm" %>
+</div>

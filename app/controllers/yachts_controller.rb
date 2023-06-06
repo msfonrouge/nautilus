@@ -1,18 +1,20 @@
 class YachtsController < ApplicationController
-  before_action :show, :edit, :update, :destroy
+  before_action :set_yachts, only: [:show, :edit, :update, :destroy]
+
   def index
     @yachts = Yacht.all
-  end
-
-  def show
   end
 
   def new
     @yacht = Yacht.new
   end
 
+  def show
+  end
+
   def create
     @yacht = Yacht.new(yacht_params)
+    @yacht.user_id = current_user.id
     if @yacht.save
       redirect_to yacht_path(@yacht)
     else
@@ -25,6 +27,7 @@ class YachtsController < ApplicationController
 
   def update
     @yacht.update(yacht_params)
+    @yacht.user_id = current_user.id
     if @yacht.save
       redirect_to yacht_path(@yacht.id),
                   notice: "El yacht se ha actualizado perfectamente"
@@ -45,6 +48,6 @@ class YachtsController < ApplicationController
   end
 
   def yacht_params
-    params.require(:yacht).permit(:name, :price, :capacity)
+    params.require(:yacht).permit(:name, :price, :capacity, :user_id)
   end
 end
