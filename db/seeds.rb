@@ -125,8 +125,9 @@ Yacht.create!(name: "Rocinante", price: 1925, capacity: 5, user_id: 5)
 
 Yacht.create!(name: "Hammurabi IV", price: 6901, capacity: 4, user_id: 5)
 
-Booking.create!(date: '2023-03-04', status: 'good capacity', user_id: 1 , yacht_id: 19)
-Booking.create!(date: '2023-03-04', status: 'good capacity', user_id: 5 , yacht_id: 20)
-Booking.create!(date: '2023-03-04', status: 'good capacity', user_id: 3 , yacht_id: 11)
-Booking.create!(date: '2023-03-04', status: 'good capacity', user_id: 5 , yacht_id: 14)
+Booking.create!(date: '2023-03-04', status: 'not-available', user_id: 1, yacht_id: 19)
+Booking.create!(date: '2023-03-04', status: 'not-available', user_id: 5, yacht_id: 20)
+Booking.create!(date: '2023-03-04', status: 'not-available', user_id: 3, yacht_id: 11)
+Booking.create!(date: '2023-03-04', status: 'not-available', user_id: 5, yacht_id: 14)
 
+puts 'finish seeds'
