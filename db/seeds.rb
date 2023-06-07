@@ -65,7 +65,7 @@ User.create!(
 
 Yacht.create!(name: "Tanaka", price: 2504, capacity: 5, user_id: 2)
 
-Yacht.create!(name: "Lucien", price: 7081, capacity: 18, user_id: 2)
+Yacht.create!(name: "Lucien II", price: 7081, capacity: 18, user_id: 2)
 
 User.create!(
   first_name: "Jennifer",
@@ -97,7 +97,7 @@ User.create!(
   password_confirmation: "123456"
 )
 
-Yacht.create!(name: "Lucien", price: 3978, capacity: 15, user_id: 4)
+Yacht.create!(name: "Lucien III", price: 3978, capacity: 15, user_id: 4)
 
 Yacht.create!(name: "Anubis", price: 5480, capacity: 7, user_id: 4)
 

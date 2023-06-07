@@ -6,20 +6,35 @@
   </div>
   <hr>
     <div class="row d-flex">
-    <% @yachts.each do |yacht| %>
-     <% if yacht.user_id == current_user.id %>
-      <!-- Card de bootstrap-->
-      <div class="col-4 mb-3">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= yacht.name %> </h5>
-            <p class="card-text"> <%= yacht.price %></p>
-            <p class="card-text"> <%= yacht.capacity %></p>
-            <%= link_to "Ver detalles", yacht_path(yacht.id), class:"btn btn-info" %>
+        <p>My yachts</p>
+        <% @yachts.each do |yacht| %>
+          <% if yacht.user_id == current_user.id %>
+            <!-- Card de bootstrap-->
+            <div class="col-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><%= yacht.name %> </h5>
+                  <p class="card-text"> <%= yacht.price %></p>
+                  <p class="card-text"> <%= yacht.capacity %></p>
+                  <%= link_to "Ver detalles", yacht_path(yacht.id), class:"btn btn-info" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
+      <p>All Yachts</p>
+      <% @yachts.each do |yacht| %>
+        <div class="col-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><%= yacht.name %> </h5>
+                <p class="card-text"> <%= yacht.price %></p>
+                <p class="card-text"> <%= yacht.capacity %></p>
+                <%= link_to "New Booking", new_yacht_booking_path(yacht.id), class:"btn btn-info" %>
+            </div>
           </div>
         </div>
-      </div>
       <% end %>
-     <% end %>
     </div>
 </div>
