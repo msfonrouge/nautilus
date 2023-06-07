@@ -29,11 +29,8 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(booking_params)
-    @booking.yacht = @yacht
-    if @booking.save
-      redirect_to yacht_booking_path(@booking.id),
-                  notice: "El booking se ha actualizado perfectamente"
+    if @booking.update(booking_params)
+      redirect_to booking_path(@booking.id)
     else
       render :edit, status: :unprocessable_entity
     end
