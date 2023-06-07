@@ -150,3 +150,4 @@ Booking.create!(date: '2023-03-04', status: 'good capacity', user_id: 1 , yacht_
 Booking.create!(date: '2023-03-04', status: 'good capacity', user_id: 5 , yacht_id: 20)
 Booking.create!(date: '2023-03-04', status: 'good capacity', user_id: 3 , yacht_id: 11)
 Booking.create!(date: '2023-03-04', status: 'good capacity', user_id: 5 , yacht_id: 14)
+
