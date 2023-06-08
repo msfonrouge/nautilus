@@ -1,6 +1,5 @@
-
 <div class="container shadow mt-3 p-3 w-50">
-  <% if yacht.new_record? %> ## look inside params, if key action is new = mark as true
+  <% if yacht.new_record? %>
     <h5 class="text-center">Agregar yacht</h5>
   <% else %>
     <h5 class="text-center">Editar yacht</h5>
@@ -9,6 +8,7 @@
     <%= f.input :name %>
     <%= f.input :price %>
     <%= f.input :capacity %>
+    <%= f.input :photo, as: :file %>
     <div class="row d-flex justify-content-center">
       <div class="col-2">
         <%= f.submit yacht.new_record? ? "Crear" : "Actualizar", class:"btn btn-success"%>

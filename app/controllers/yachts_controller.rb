@@ -1,5 +1,6 @@
 class YachtsController < ApplicationController
   before_action :set_yachts, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:index, :new, :show, :edit]
 
   def index
     @yachts = Yacht.all
@@ -51,6 +52,10 @@ class YachtsController < ApplicationController
   end
 
   def yacht_params
-    params.require(:yacht).permit(:name, :price, :capacity, :user_id)
+    params.require(:yacht).permit(:name, :price, :capacity, :photo)
+  end
+
+  def set_user
+    @user = current_user if current_user
   end
 end
