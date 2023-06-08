@@ -4,6 +4,9 @@ class YachtsController < ApplicationController
 
   def index
     @yachts = Yacht.all
+    if params[:query].present?
+      @yachts = @yachts.search_yacht(params[:query])
+    end
   end
 
   def new
