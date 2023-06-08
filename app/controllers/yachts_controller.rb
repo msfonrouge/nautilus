@@ -1,4 +1,5 @@
 class YachtsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_yachts, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:index, :new, :show, :edit]
 
@@ -7,6 +8,10 @@ class YachtsController < ApplicationController
     if params[:query].present?
       @yachts = @yachts.search_yacht(params[:query])
     end
+  end
+
+  def my_yachts
+    @yachts = current_user.yachts
   end
 
   def new
