@@ -1,5 +1,5 @@
-<div class="container shadow mt-3 p-3 w-50">
-  <%= cl_image_tag @yacht.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="container shadow mt-3 p-3 w-25">
+  <%= cl_image_tag @yacht.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top"%>
   <h3> <%= @yacht.name %> </h3>
   <p><%= @yacht.price %></p>
   <p><%= @yacht.capacity %></p>
