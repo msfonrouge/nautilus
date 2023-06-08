@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_bookings, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:index, :new, :show, :edit]
 
   def index
     @bookings = Booking.all
@@ -49,5 +50,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:date, :status, :yacht_id, :user_id)
+  end
+
+  def set_user
+    @user = current_user
   end
 end
