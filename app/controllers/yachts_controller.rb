@@ -11,7 +11,8 @@ class YachtsController < ApplicationController
   end
 
   def my_yachts
-    @yachts = current_user.yachts
+    @user = current_user
+    @yachts = @user.yachts
   end
 
   def new
