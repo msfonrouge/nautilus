@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :yachts do
+    collection do
+      get :my_yachts, as: :my
+    end
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, except: [:new, :create]
