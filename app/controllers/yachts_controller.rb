@@ -1,7 +1,7 @@
 class YachtsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_yachts, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:index, :new, :show, :edit]
+  before_action :set_user, only: [:index, :new, :show, :edit, :my_yachts]
 
   def index
     @yachts = Yacht.all
@@ -11,7 +11,6 @@ class YachtsController < ApplicationController
   end
 
   def my_yachts
-    @user = current_user
     @yachts = @user.yachts
   end
 
