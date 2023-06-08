@@ -1,9 +1,25 @@
-<ul><% @bookings.each do |booking| %>
-<li>
-  <%= booking.id %>
-  <%= booking.date %>
-  <%= booking.status %>
-  <%= link_to " Ver detalles", booking_path(booking.id) %>
-</li>
-<% end %>
-</ul>
+<div class="container mt-3">
+   <!--<div class="row">
+    <div class="col">
+      <%= link_to "Nuevo Booking", bookings_path, class:"btn btn-primary" %>
+    </div>
+  </div>-->
+  <hr>
+<div class="row d-flex">
+    <% @bookings.each do |booking| %>
+     <% if booking.user_id == current_user.id %>
+      <!-- Card de bootstrap-->
+      <div class="col-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= booking.yacht.name %></h5>
+            <p class="card-text"> <%= booking.date %></p>
+            <p class="card-text"> <%= booking.status %></p>
+            <%= link_to "Ver detalles", booking_path(booking.id), class:"btn btn-info" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+     <% end %>
+    </div>
+    </div>
