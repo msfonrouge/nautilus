@@ -7,7 +7,6 @@
   <hr>
     <div class="row d-flex">
     <% @yachts.each do |yacht| %>
-     <% if yacht.user_id == current_user.id %>
       <!-- Card de bootstrap-->
       <div class="col-4 mb-3">
         <div class="card">
@@ -20,6 +19,5 @@
         </div>
       </div>
       <% end %>
-     <% end %>
     </div>
 </div>
