@@ -79,8 +79,7 @@ group :test do
   gem "webdrivers"
 end
 
-
+gem "autoprefixer-rails"
 gem "pg_search"
 
 gem "cloudinary"
-
