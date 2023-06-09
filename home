@@ -1,0 +1,236 @@
+<header>
+
+  <!-- Background image -->
+  <div id="intro" class="bg-image shadow-2-strong">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+      <div class="container d-flex align-items-center justify-content-center text-center h-100">
+        <div class="text-white">
+        </div>
+      </div>
+    </div>
+  <!-- Form Inside Image -->
+
+<% if current_user%>
+<%else%>
+    <div class="form-img">
+      <form action="/action_page.php" class="container">
+        <h1>Login</h1>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+    </div>
+  <!-- Form Inside Image -->
+
+<!-- Form Inside Image -->
+      <div class="form-img">
+  <%= form_for(User.new, url: session_path(:user), html: { class: "container" }) do |f| %>
+  <h1>Login</h1>
+      <b><%= f.label :email %></b>
+      <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+
+      <b><%= f.label :password %></b>
+      <%= f.password_field :password, placeholder: "Password" %>
+
+      <%= f.submit "Sign in", class: "btn" %>
+<% end %>
+  <% end %>
+</div>
+<!-- Form Inside Image -->
+  </div>
+
+  <!-- Background image -->
+
+  <!-- Search Bar -->
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-5">
+      <%= form_with url: yachts_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control p-3",
+              placeholder: "Type a keyword"
+          %>
+        <%= submit_tag "Search", name: "", class: "search-btn" %>
+      <% end %>
+    </div>
+  </div>
+  <!-- Search Bar -->
+
+
+
+</header>
+
+  <!-- Header ends here -->
+
+<!--Main layout-->
+<main>
+  <div class="container">
+
+    <!--Section: Content-->
+    <section class="text-center">
+      <h4 class="mb-5"><strong>La Mejor Solución Para Alquiler Yates</strong></h4>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="https://images.unsplash.com/photo-1593351415075-3bac9f45c877?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Small Yacht</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <a href="#!" class="default1_button">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="https://images.unsplash.com/photo-1561728130-afd430af0493?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Medium Yacht</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <a href="#!" class="default1_button">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="https://images.unsplash.com/photo-1585719238658-8a97633ee965?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Large Yacht</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <a href="#!" class="default1_button">Button</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Section: Content-->
+
+    <hr class="my-5" />
+
+    <!--Section: Content-->
+    <section>
+      <div class="row">
+        <div class="col-md-6 gx-5 mb-4">
+          <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+            <img src="https://images.unsplash.com/photo-1599582350162-83106f579198?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="img-fluid" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 gx-5 mb-4">
+          <h4><strong>Porque alquilar con Nautilus</strong></h4>
+          <p class="text-muted">
+            Más de 40,000 alquileres de yates y barcos privados en todo el mundo para tu próximo viaje.
+             Más de 40,000 alquileres de yates y barcos privados en todo el mundo para tu próximo viaje.
+              Más de 40,000 alquileres de yates y barcos privados en todo el mundo para tu próximo viaje.
+               Más de 40,000 alquileres de yates y barcos privados en todo el mundo para tu próximo viaje.
+
+          </p>
+          <p><strong>#1 alquilar con seguridad y comodidad</strong></p>
+          <p class="text-muted">
+            Nautilus es el líder y mas recomendado peer to peer marketplace para alquiler de yates.
+             Nautilus es el líder y mas recomendado peer to peer marketplace para alquiler de yates.
+              Nautilus es el líder y mas recomendado peer to peer marketplace para alquiler de yates.
+               Nautilus es el líder y mas recomendado peer to peer marketplace para alquiler de yates.
+          </p>
+
+        </div>
+      </div>
+    </section>
+    <!--Section: Content-->
+
+    <hr class="my-5" />
+
+    <!--Section: Content-->
+     <% if current_user%>
+    <%else%>
+
+    <section class="mb-5">
+      <h4 class="mb-5 text-center"><strong>Registrate</strong></h4>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <form>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form3Example1" class="form-control" />
+                  <label class="form-label" for="form3Example1">First name</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form3Example2" class="form-control" />
+                  <label class="form-label" for="form3Example2">Last name</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form3Example3" class="form-control" />
+              <label class="form-label" for="form3Example3">Email address</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="form3Example4" class="form-control" />
+              <label class="form-label" for="form3Example4">Password</label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-center mb-4">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" checked />
+              <label class="form-check-label" for="form2Example3">
+                Subscribe to our newsletter
+              </label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">
+              Sign up
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+     <% end %>
+    <!--Section: Content-->
+  </div>
+</main>
+<!--Main layout-->
