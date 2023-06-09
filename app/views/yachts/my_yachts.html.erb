@@ -1,12 +1,16 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col">
-      <%= link_to "Crear yacht", new_yacht_path, class:"btn btn-primary" %>
+      <h2 class="fw-bold">Barcos de <%= current_user&.first_name || 'Usuario' %></h2>
     </div>
   </div>
   <hr>
     <div class="row d-flex">
-        <p>My yachts</p>
+ <div class="row">
+    <div class="col">
+      <%= link_to "Crear yacht", new_yacht_path, class:"btn btn-primary mb-3" %>
+    </div>
+  </div>
         <% @yachts.each do |yacht| %>
           <% if yacht.user_id == current_user.id %>
             <!-- Card de bootstrap-->
