@@ -1,17 +1,4 @@
  <header>
-    <style>
-
-      #intro {
-        background-image: url("assets/yachtbanner1.jpeg");
-        height: 70vh;
-      }
-
-      .navbar .nav-link {
-        color: #000000
-    !important;
-      }
-    </style>
-
     <!-- Background image -->
     <div id="intro" class="bg-image shadow-2-strong">
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
@@ -38,17 +25,30 @@
       </div>
     <!-- Form Inside Image -->
 
+<!-- Form Inside Image -->
+    <div class="form-img">
+<%= form_for(User.new, url: session_path(:user), html: { class: "container" }) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: "Password" %>
+
+    <%= f.submit "Sign in", class: "btn" %>
+<% end %>
+</div>
+<!-- Form Inside Image -->
     </div>
 
     <!-- Background image -->
 
     <!-- Search Bar -->
     <div class="row justify-content-center">
-      <div class="col-sm-8 my-3">
+      <div class="col-sm-8 my-5">
         <%= form_with url: yachts_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
                 params[:query],
-                class: "form-control",
+                class: "form-control p-3",
                 placeholder: "Type a keyword"
             %>
           <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
