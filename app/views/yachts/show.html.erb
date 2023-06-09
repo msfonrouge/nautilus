@@ -1,14 +1,24 @@
-<div class="container shadow mt-3 p-3 w-25">
-  <%= cl_image_tag @yacht.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top"%>
-  <h3> <%= @yacht.name %> </h3>
-  <p><%= @yacht.price %></p>
-  <p><%= @yacht.capacity %></p>
-  <% if current_user && @yacht.user_id == current_user.id %>
-  <%= link_to "Editar", edit_yacht_path(@yacht.id), class:"btn btn-warning btn-sm" %>
-  <%= link_to "Eliminar", yacht_path(@yacht.id),
-  data: {turbo_method: :delete, turbo_confirm: "¿Estás seguro de que quieres borrar este yacht?"}, class:"btn btn-danger btn-sm" %>
-  <% else %>
-  <%= link_to "Alquilar", new_yacht_booking_path(@yacht.id), class:"btn btn-info btn-sm" %>
-  <% end %>
-  <%= link_to "Volver", :back, class:"btn btn-primary btn-sm" %>
+<div class="container shadow mt-3 p-2 mb-3">
+  <div class="card">
+    <div class="row g-0">
+      <div class="col-md-6 zoom-effect">
+        <%= cl_image_tag @yacht.photo.key, height: 300, width: 600, crop: :fill, class:"card-img-top"%>
+      </div>
+      <div class="col-md-3">
+        <div class="card-body ">
+          <h1> <%= @yacht.name %> </h1>
+          <p><i class="fa-regular fa-money-bill-1"></i> $<%= @yacht.price %></p>
+          <p><i class="fa-solid fa-person"></i><%= @yacht.capacity %></p>
+          <% if current_user && @yacht.user_id == current_user.id %>
+          <%= link_to "Editar", edit_yacht_path(@yacht.id), class:"btn btn-warning btn-sm" %>
+          <%= link_to "Eliminar", yacht_path(@yacht.id),
+          data: {turbo_method: :delete, turbo_confirm: "¿Estás seguro de que quieres borrar este yacht?"}, class:"btn btn-danger btn-sm" %>
+          <% else %>
+          <%= link_to "Alquilar", new_yacht_booking_path(@yacht.id), class:"btn btn-info btn-sm" %>
+          <% end %>
+          <%= link_to "Volver", :back, class:"btn btn-primary btn-sm" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
