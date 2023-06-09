@@ -47,7 +47,7 @@ class YachtsController < ApplicationController
 
   def destroy
     @yacht.destroy
-    redirect_to yachts_path, status: :see_other
+    redirect_to my_yachts_path
   end
 
   private
