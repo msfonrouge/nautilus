@@ -1,12 +1,16 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col">
-      <%= link_to "Crear yacht", new_yacht_path, class:"btn btn-primary" %>
+      <h2 class="fw-bold">Barcos de <%= current_user&.first_name || 'Usuario' %></h2>
     </div>
   </div>
   <hr>
     <div class="row d-flex">
-        <p>My yachts</p>
+ <div class="row">
+    <div class="col">
+      <%= link_to "Crear yacht", new_yacht_path, class:"btn btn-primary mb-3" %>
+    </div>
+  </div>
         <% @yachts.each do |yacht| %>
           <% if yacht.user_id == current_user.id %>
             <!-- Card de bootstrap-->
@@ -15,9 +19,9 @@
                 <%= cl_image_tag yacht.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top"%>
                 <div class="card-body">
                   <h5 class="card-title"><%= yacht.name %> </h5>
-                <p class="card-text"><i class="fa-regular fa-money-bill-1"></i> <%= yacht.price %></p>
-                <p class="card-text"><i class="fa-solid fa-person"></i> <%= yacht.capacity %></p>
-                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque autem est repellendus maxime, mollitia consequatur eum sint impedit iusto tempore facilis ea voluptates dicta provident illum? Quod veniam eum nihil.</p>
+                  <p class="card-text"><i class="fa-regular fa-money-bill-1"></i> <%= yacht.price %></p>
+                  <p class="card-text"><i class="fa-solid fa-person"></i> <%= yacht.capacity %></p>
+                  <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque autem est repellendus maxime, mollitia consequatur eum sint impedit iusto tempore facilis ea voluptates dicta provident illum? Quod veniam eum nihil.</p>
                   <%= link_to "Ver detalles", yacht_path(yacht.id), class:"btn btn-info" %>
                 </div>
               </div>

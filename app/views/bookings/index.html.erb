@@ -1,9 +1,9 @@
 <div class="container mt-3">
-   <!--<div class="row">
+   <div class="row">
     <div class="col">
-      <%= link_to "Nuevo Booking", bookings_path, class:"btn btn-primary" %>
+      <h2 class="fw-bold">Bookings de <%= current_user&.first_name || 'Usuario' %></h2>
     </div>
-  </div>-->
+  </div>
   <hr>
 <div class="row d-flex">
     <% @bookings.each do |booking| %>
@@ -15,7 +15,6 @@
           <div class="card-body">
             <h5 class="card-title"><%= booking.yacht.name %></h5>
             <p class="card-text"> <%= booking.start_date %> - <%= booking.end_date %></p>
-            <p class="card-text"> <%= booking.status %></p>
             <%= link_to "Ver detalles", booking_path(booking.id), class:"btn btn-info" %>
           </div>
         </div>
