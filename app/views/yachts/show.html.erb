@@ -6,7 +6,7 @@
   <% if current_user && @yacht.user_id == current_user.id %>
   <%= link_to "Editar", edit_yacht_path(@yacht.id), class:"btn btn-warning btn-sm" %>
   <%= link_to "Eliminar", yacht_path(@yacht.id),
-  data: {turbo_method: :delete, turbo_confirm: "¿Estás seguro de que quieres borrar este yacht?"}, class:"btn btn-danger btn-sm" %>
+  data: {turbo_method: :delete, turbo_confirm: "¿Está seguro de que quiere borrar este yacht?"}, class:"btn btn-danger btn-sm" %>
   <% else %>
   <%= link_to "Alquilar", new_yacht_booking_path(@yacht.id), class:"btn btn-info btn-sm" %>
   <% end %>
