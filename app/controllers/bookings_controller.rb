@@ -7,6 +7,8 @@ class BookingsController < ApplicationController
   end
 
   def show
+    yacht_id = params[:yacht_id]
+    @yacht = Yacht.find(yacht_id)
   end
 
   def new
@@ -19,9 +21,9 @@ class BookingsController < ApplicationController
     @yacht = Yacht.find(params[:yacht_id])
     @booking.yacht_id = @yacht.id
     @booking.user_id = @user.id
-    @booking.status = "not-available"
-    if @booking.save
-      redirect_to booking_path(@booking.id)
+    @yacht.status = true
+    if @booking.save && @yacht.save
+      redirect_to booking_path(@booking.id, yacht_id: @yacht.id)
     else
       render :new, status: :unprocessable_entity
     end
