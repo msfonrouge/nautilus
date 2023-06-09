@@ -1,0 +1,11 @@
+.zoom-effect {
+  overflow: hidden; /* Para recortar la imagen dentro del contenedor */
+}
+
+.zoom-effect img {
+  transition: transform 0.3s ease; /* Transición suave de 0.3 segundos */
+}
+
+.zoom-effect:hover img {
+  transform: scale(1.2); /* Zoom del 120% al pasar el cursor por encima */
+}
