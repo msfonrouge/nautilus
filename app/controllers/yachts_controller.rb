@@ -16,6 +16,7 @@ class YachtsController < ApplicationController
 
   def new
     @yacht = Yacht.new
+    raise
   end
 
   def show

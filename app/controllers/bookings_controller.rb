@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_bookings, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:index, :new, :show, :edit]
+  before_action :set_user, only: [:index, :new, :create, :show, :edit]
 
   def index
     @bookings = Booking.all
@@ -18,7 +18,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @yacht = Yacht.find(params[:yacht_id])
     @booking.yacht_id = @yacht.id
-    @booking.user_id = current_user.id
+    @booking.user_id = @user.id
+    @booking.status = "not-available"
     if @booking.save
       redirect_to booking_path(@booking.id)
     else
