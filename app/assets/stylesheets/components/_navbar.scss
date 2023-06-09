@@ -14,3 +14,24 @@
 .nav-item {
   margin-left: 15px;
 }
+
+#main-logo {
+min-width: 150px;
+position: absolute;
+z-index: 5;
+top: -30px;
+}
+
+//min-width: 500px;
+//max-width: 125px;
+//padding-left: 2em;
+//padding-top: .25em;
+//padding-right: 3em;
+
+
+// padding-top: 5px;
+// margin-left: 20px;
+// height: 80px;
+// width: 80px;
+// position: absolute; // add this to take the logo out of the layout
+// z-index: 5; // add this to keep the logo in front of the other content
