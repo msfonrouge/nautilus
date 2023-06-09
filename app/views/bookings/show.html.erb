@@ -1,5 +1,6 @@
 <div class="container shadow mt-3 p-3 w-50">
   <h1> <%= @booking.yacht.name %> </h1>
+  <%= cl_image_tag @booking.yacht.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top"%>
   <h3> <%= @booking.date %> </h3>
   <p><%= @booking.status %></p>
   <%= link_to "Editar", edit_booking_path(@booking.id), class:"btn btn-warning btn-sm" %>
