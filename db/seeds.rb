@@ -169,9 +169,9 @@ photo_corvette = URI.open("https://arc-anglerfish-arc2-prod-infobae.s3.amazonaws
 corvette.photo.attach(io: photo_corvette, filename: "corvette.png", content_type: "image/png")
 corvette.save!
 
-Booking.create!(date: '2023-03-04', status: 'not-available', user_id: lorraine.id, yacht_id: lucienn.id)
-Booking.create!(date: '2023-03-04', status: 'not-available', user_id: marty.id, yacht_id: calli.id)
-Booking.create!(date: '2023-03-04', status: 'not-available', user_id: george.id, yacht_id: anubis.id)
-Booking.create!(date: '2023-03-04', status: 'not-available', user_id: marty.id, yacht_id: corvette.id)
+Booking.create!(start_date: '2023-03-04',end_date: '2024-07-04', status: 'not-available', user_id: lorraine.id, yacht_id: lucienn.id)
+Booking.create!(start_date: '2023-03-04',end_date: '2024-07-04', status: 'not-available', user_id: marty.id, yacht_id: calli.id)
+Booking.create!(start_date: '2023-03-04',end_date: '2024-07-04', status: 'not-available', user_id: george.id, yacht_id: anubis.id)
+Booking.create!(start_date: '2023-03-04',end_date: '2024-07-04', status: 'not-available', user_id: marty.id, yacht_id: corvette.id)
 
 puts 'finish seeds'

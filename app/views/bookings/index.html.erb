@@ -14,7 +14,7 @@
           <%= cl_image_tag booking.yacht.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top"%>
           <div class="card-body">
             <h5 class="card-title"><%= booking.yacht.name %></h5>
-            <p class="card-text"> <%= booking.date %></p>
+            <p class="card-text"> <%= booking.start_date %> - <%= booking.end_date %></p>
             <p class="card-text"> <%= booking.status %></p>
             <%= link_to "Ver detalles", booking_path(booking.id), class:"btn btn-info" %>
           </div>
