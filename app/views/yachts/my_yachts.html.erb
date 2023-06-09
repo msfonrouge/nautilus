@@ -11,6 +11,9 @@
       <%= link_to "Crear yacht", new_yacht_path, class:"btn btn-primary mb-3" %>
     </div>
   </div>
+        <% if @yachts.empty? %>
+          <p>No tiene ningún yacht.</p>
+        <% end %>
         <% @yachts.each do |yacht| %>
           <% if yacht.user_id == current_user.id %>
             <!-- Card de bootstrap-->
