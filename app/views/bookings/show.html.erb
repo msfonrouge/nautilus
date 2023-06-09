@@ -5,7 +5,11 @@
   <h1 class="card-title"><%= @booking.yacht.name %> </h1>
   <%= cl_image_tag @booking.yacht.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top"%>
   <p class="card-text"> <%= @booking.start_date %> - <%= @booking.end_date %> </p>
-  <p class="card-text"><%= @booking.status %></p>
+  <% if @yacht.status == true  %>
+  <p class="card-text"> Not Available </p>
+  <% else %>
+  <p class="card-text"> Available </p>
+  <% end %>
   <%= link_to "Editar", edit_booking_path(@booking.id), class:"btn btn-warning btn-sm" %>
   <%= link_to "Eliminar", booking_path(@booking.id),
   data: {turbo_method: :delete, turbo_confirm: "¿Está seguro de que quiere borrar este booking?"}, class:"btn btn-danger btn-sm" %>
@@ -14,7 +18,3 @@
 </div>
 </div>
 </div>
-
-
-
-
