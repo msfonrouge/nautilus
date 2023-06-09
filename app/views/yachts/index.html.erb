@@ -1,6 +1,9 @@
 <div class="container mt-3">
     <div class="row d-flex">
-      <p>All Yachts</p>
+      <div class="px-4 py-1 my-3 text-center">
+        <h1 class="display-5 fw-bold">¡Hola Capitán!</h1>
+        <p>¿Cuál va a ser tu próximo destino?</p>
+      </div>
       <% @yachts.each do |yacht| %>
         <div class="col-4 mb-3">
           <div class="card">
@@ -9,6 +12,11 @@
                 <h5 class="card-title"><%= yacht.name %> </h5>
                 <p class="card-text"><i class="fa-regular fa-money-bill-1"></i> <%= yacht.price %></p>
                 <p class="card-text"><i class="fa-solid fa-person"></i> <%= yacht.capacity %></p>
+                <% if yacht.status == true  %>
+                <p class="card-text"> Not Available </p>
+                <% else %>
+                <p class="card-text"> Available </p>
+                <% end %>
                 <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque autem est repellendus maxime, mollitia consequatur eum sint impedit iusto tempore facilis ea voluptates dicta provident illum? Quod veniam eum nihil.</p>
                 <%= link_to "Ver detalles", yacht_path(yacht.id), class:"btn btn-info" %>
                 <%= link_to "Alquilar", new_yacht_booking_path(yacht.id), class:"btn btn-info" %>

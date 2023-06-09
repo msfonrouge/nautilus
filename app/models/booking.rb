@@ -7,6 +7,6 @@ class Booking < ApplicationRecord
   validates :status, inclusion: { in: ["available", "not-available"] }
 
   def set_defaults
-    self.status = "not-available"
+    self.status = "available"
   end
 end

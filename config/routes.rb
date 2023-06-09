@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-  resources :yachts do
+  resources :yachts, except: [:destroy] do
     collection do
       get :my_yachts, as: :my
     end
@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  #resources :yachts, only: :destroy, as: :destroy_yacht
+  delete "/yachts/:id", to: "yachts#destroy", as: :destroy_yacht
 end
