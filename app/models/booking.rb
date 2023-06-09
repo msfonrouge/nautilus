@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
 
   belongs_to :user
   belongs_to :yacht
-  validates :date, :status, presence: true
+  validates :start_date, :end_date, :status, presence: true
   validates :status, inclusion: { in: ["available", "not-available"] }
 
   def set_defaults
