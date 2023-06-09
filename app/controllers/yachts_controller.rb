@@ -1,5 +1,5 @@
 class YachtsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_yachts, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:index, :new, :create, :show, :edit, :my_yachts]
 
@@ -47,7 +47,7 @@ class YachtsController < ApplicationController
 
   def destroy
     @yacht.destroy
-    redirect_to my_yachts_path
+    redirect_to my_yachts_path, status: :see_other
   end
 
   private
