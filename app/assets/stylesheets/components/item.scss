@@ -1,9 +1,22 @@
 .itemsList {
-padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 .itemsList__items {
+  font-size: 14px;
+  color: gray;
   display: flex;
   padding: 10px;
   margin-right: 10px; /* Espacio entre los iconos */
-
+  flex-wrap: wrap;
+  display: flex;
+}
+.itemsList__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 120px;
+  margin-bottom: 15px;
 }
