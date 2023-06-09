@@ -16,7 +16,7 @@
                 <p class="card-text"> <%= yacht.price %></p>
                 <p class="card-text"> <%= yacht.capacity %></p>
                 <%= link_to "Ver detalles", yacht_path(yacht.id), class:"btn btn-info" %>
-                <%= link_to "New Booking", new_yacht_booking_path(yacht.id), class:"btn btn-info" %>
+                <%= link_to "Alquilar", new_yacht_booking_path(yacht.id), class:"btn btn-info" %>
             </div>
           </div>
         </div>
