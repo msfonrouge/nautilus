@@ -1,10 +1,20 @@
-<div class="container shadow mt-3 p-3 w-50">
-  <h1> <%= @booking.yacht.name %> </h1>
+ <div class="container">
+ <div class="col-4 mb-3">
+  <div class="card">
+              <div class="card-body">
+  <h1 class="card-title"><%= @booking.yacht.name %> </h1>
   <%= cl_image_tag @booking.yacht.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top"%>
-  <h3> <%= @booking.date %> </h3>
-  <p><%= @booking.status %></p>
+  <p class="card-text"> <%= @booking.date %> </p>
+  <p class="card-text"><%= @booking.status %></p>
   <%= link_to "Editar", edit_booking_path(@booking.id), class:"btn btn-warning btn-sm" %>
   <%= link_to "Eliminar", booking_path(@booking.id),
   data: {turbo_method: :delete, turbo_confirm: "Estas seguro/a quie quieres borrar este booking"}, class:"btn btn-danger btn-sm" %>
   <%= link_to "Volver", bookings_path, class:"btn btn-primary btn-sm" %>
 </div>
+</div>
+</div>
+</div>
+
+
+
+

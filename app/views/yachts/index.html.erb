@@ -9,6 +9,7 @@
                 <h5 class="card-title"><%= yacht.name %> </h5>
                 <p class="card-text"><i class="fa-regular fa-money-bill-1"></i> <%= yacht.price %></p>
                 <p class="card-text"><i class="fa-solid fa-person"></i> <%= yacht.capacity %></p>
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque autem est repellendus maxime, mollitia consequatur eum sint impedit iusto tempore facilis ea voluptates dicta provident illum? Quod veniam eum nihil.</p>
                 <%= link_to "Ver detalles", yacht_path(yacht.id), class:"btn btn-info" %>
                 <%= link_to "Alquilar", new_yacht_booking_path(yacht.id), class:"btn btn-info" %>
             </div>
